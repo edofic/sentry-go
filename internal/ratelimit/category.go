@@ -3,7 +3,7 @@ package ratelimit
 import "strings"
 
 // Reference:
-// https://github.com/getsentry/relay/blob/0424a2e017d193a93918053c90cdae9472d164bf/relay-common/src/constants.rs#L116-L127
+// https://github.com/edofic/relay/blob/0424a2e017d193a93918053c90cdae9472d164bf/relay-common/src/constants.rs#L116-L127
 
 // Category classifies supported payload types that can be ingested by Sentry
 // and, therefore, rate limited.

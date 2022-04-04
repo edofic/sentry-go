@@ -22,7 +22,7 @@ var errInvalidXSRLRetryAfter = errors.New("invalid retry-after value")
 //
 // Limits for unknown categories are ignored.
 func parseXSentryRateLimits(s string, now time.Time) Map {
-	// https://github.com/getsentry/relay/blob/0424a2e017d193a93918053c90cdae9472d164bf/relay-server/src/utils/rate_limits.rs#L44-L82
+	// https://github.com/edofic/relay/blob/0424a2e017d193a93918053c90cdae9472d164bf/relay-server/src/utils/rate_limits.rs#L44-L82
 	m := make(Map, len(knownCategories))
 	for _, limit := range strings.Split(s, ",") {
 		limit = strings.TrimSpace(limit)
@@ -63,7 +63,7 @@ func parseXSentryRateLimits(s string, now time.Time) Map {
 // Negative values are treated as zero. Fractional values are rounded to the
 // next integer.
 func parseXSRLRetryAfter(s string, now time.Time) (Deadline, error) {
-	// https://github.com/getsentry/relay/blob/0424a2e017d193a93918053c90cdae9472d164bf/relay-quotas/src/rate_limit.rs#L88-L96
+	// https://github.com/edofic/relay/blob/0424a2e017d193a93918053c90cdae9472d164bf/relay-quotas/src/rate_limit.rs#L88-L96
 	f, err := strconv.ParseFloat(s, 64)
 	if err != nil {
 		return Deadline{}, errInvalidXSRLRetryAfter

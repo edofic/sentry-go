@@ -84,7 +84,7 @@ func TestParseXSentryRateLimits(t *testing.T) {
 	}
 }
 func TestParseXSRLRetryAfterValidInput(t *testing.T) {
-	// https://github.com/getsentry/relay/blob/0424a2e017d193a93918053c90cdae9472d164bf/relay-quotas/src/rate_limit.rs#L88-L96
+	// https://github.com/edofic/relay/blob/0424a2e017d193a93918053c90cdae9472d164bf/relay-quotas/src/rate_limit.rs#L88-L96
 	tests := []struct {
 		input string
 		want  Deadline
@@ -95,7 +95,7 @@ func TestParseXSRLRetryAfterValidInput(t *testing.T) {
 		{"60", Deadline(now.Add(1 * time.Minute))},
 
 		// Any fractional increment round up to the next full second
-		// (replicating implementation in getsentry/relay)
+		// (replicating implementation in edofic/relay)
 		{"3.1", Deadline(now.Add(4 * time.Second))},
 		{"3.5", Deadline(now.Add(4 * time.Second))},
 		{"3.9", Deadline(now.Add(4 * time.Second))},
@@ -128,7 +128,7 @@ func TestParseXSRLRetryAfterValidInput(t *testing.T) {
 }
 
 func TestParseXSRLRetryAfterInvalidInput(t *testing.T) {
-	// https://github.com/getsentry/relay/blob/0424a2e017d193a93918053c90cdae9472d164bf/relay-quotas/src/rate_limit.rs#L88-L96
+	// https://github.com/edofic/relay/blob/0424a2e017d193a93918053c90cdae9472d164bf/relay-quotas/src/rate_limit.rs#L88-L96
 	tests := []struct {
 		input string
 	}{

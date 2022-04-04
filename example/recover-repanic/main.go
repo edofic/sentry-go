@@ -20,7 +20,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/getsentry/sentry-go"
+	"github.com/edofic/sentry-go"
 )
 
 func main() {
